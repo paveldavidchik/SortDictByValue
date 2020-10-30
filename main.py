@@ -22,7 +22,7 @@ If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 """
-words = zen.split()
+words = [word.lower().strip(',.!-') for word in zen.split()]
 count_dict = {word: words.count(word) for word in words}
 count_dict = sorted(count_dict.items(), key=lambda t: t[1], reverse=True)
 for word in count_dict[:3]:
